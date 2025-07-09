@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 
 const swaggerDocument = JSON.parse(fs.readFileSync(
-    path.resolve(""),
+    path.resolve("./documentacionEnrique.json"),
     "utf-8")
   )
   

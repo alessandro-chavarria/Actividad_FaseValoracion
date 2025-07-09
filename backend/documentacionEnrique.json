@@ -1,0 +1,418 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Simple Inventory API",
+    "description": "This is a simple API",
+    "contact": {
+      "email": "you@your-company.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/partplus-e1a/PartPlus_API/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "paths": {
+    "/api/clients": {
+      "get": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Select a clientes",
+        "description": "Este metodo Get consulta todos los clientes de la colección",
+        "operationId": "/api/clients",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Insert a clients",
+        "description": "Con este metodo se agrega a un nuevo cliente",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_clients_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/clients/id": {
+      "get": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Select a clientes",
+        "description": "Con este metodo se manda a pedir un cliente en especifico de la colección",
+        "operationId": "get-api-clients-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Update a clientes",
+        "description": "Con este metodo se actualiza los datos de un cliente en la colección",
+        "operationId": "put-api-clients-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/clients_id_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Delete a clientes",
+        "description": "Con este metodo se borra un cliente de la colección ",
+        "operationId": "delete-api-clients-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/reservations": {
+      "get": {
+        "tags": [
+          "Reservas"
+        ],
+        "summary": "Select a reservas",
+        "description": "Con este metodo se le hace un select a todos las colecciones de reservas",
+        "operationId": "get-api-reservations",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Reservas"
+        ],
+        "summary": "Insert a reservas",
+        "description": "Con este metodo se agrega nuevas reservas",
+        "operationId": "post-api-reservations",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_reservations_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/reservations/id": {
+      "get": {
+        "tags": [
+          "Reservas"
+        ],
+        "summary": "Select a reservas",
+        "description": "Con este metodo se le hace un Select a una reserva en especifico de la colección",
+        "operationId": "get-api-reservations-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Reservas"
+        ],
+        "summary": "Update a reservas",
+        "description": "Con este metodo se actualiza los campos de una reserva de la colecció",
+        "operationId": "put-api-reservations-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reservations_id_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reservas"
+        ],
+        "summary": "Delete a reservas",
+        "description": "Con este metodo se borra una reserva de la colección",
+        "operationId": "delete-api-reservations-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "api_clients_body": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "tg6o4j5vp77fx"
+            }
+          },
+          "email": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "z4azlcyjmdtq7"
+            }
+          },
+          "password": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "6z81dtq7ol9yx"
+            }
+          },
+          "phone": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "i4257so8kia8k"
+            }
+          },
+          "age": {
+            "type": "number",
+            "x-stoplight": {
+              "id": "ofv7uawu03obb"
+            }
+          }
+        }
+      },
+      "clients_id_body": {
+        "type": "object",
+        "properties": {
+          "name ": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "60l22pean8bze"
+            }
+          },
+          "email": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "g33tenqj3nrwj"
+            }
+          },
+          "password": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "n79obbpjbc14v"
+            }
+          },
+          "phone": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "ass4ewfpzlrja"
+            }
+          },
+          "age": {
+            "type": "number",
+            "x-stoplight": {
+              "id": "uox5i1x4jm2pp"
+            }
+          }
+        }
+      },
+      "api_reservations_body": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "xx8qd3uvkl1hg"
+            }
+          },
+          "vehicle": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "ggs5eb6xjbbi0"
+            }
+          },
+          "service": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "eq7gdw39sgcvc"
+            }
+          },
+          "status": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "c5lxf2fv75gvz"
+            }
+          }
+        }
+      },
+      "reservations_id_body": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "t2knt8i13z501"
+            }
+          },
+          "vehicle": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "lk4izhyd8neo6"
+            }
+          },
+          "service": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "pwpwo0iwc80o6"
+            }
+          },
+          "status": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "wjeexam0l72jp"
+            }
+          }
+        }
+      }
+    }
+  }
+}
