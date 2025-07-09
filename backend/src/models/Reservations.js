@@ -18,15 +18,15 @@ const ReservationsSchema = new Schema(
     },
     vehicle: {
       type: String,
-      required: true,
+      required: true
     },
     service: {
       type: String,
-      required: true,
+      required: true
     },
     status: {
       type: String,
-      required: true,
+      required: true
     },
   },
   {
